@@ -14,4 +14,8 @@ public interface CustomerDAO {
 
 	public List<Customer> findByCriteria(DetachedCriteria criteria, int firstResult, int maxResults);
 
+	public Customer findCustomer(Long cust_id);
+
+	public void delete(Customer customerQuery);
+
 }

@@ -65,7 +65,9 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
 		String destFilePath=SystemContent.FILEUPLOADBASEPATH+filePath;
 		//复制文件（上传）
 		FileUtils.copyFile(upload, new File(destFilePath));
-		
+		//封装实体类属性
+		customer.setCust_path(filePath);
+		customer.setCust_fileName(randomFileName);
 		
 		customerService.saveCustomer(customer);
 		return "listAction";
@@ -104,6 +106,20 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
 		//回显
 		ActionContext.getContext().put("pagination", pagination);
 		return "listjsp";
+	}
+	
+	//删除
+	public String delete(){
+		//先查客户
+		Customer customerQuery=customerService.findCustomerByID(customer.getCust_id());
+		//1.删文件
+		//获取文件
+		String filePath=customer.getCust_path();
+		String destFilePath=SystemContent.FILEUPLOADBASEPATH+"/"+filePath;
+		new File(destFilePath).delete();
+		//2.删数据
+		customerService.deleteCustomer(customerQuery);
+		return "listAction";
 	}
 	
 }

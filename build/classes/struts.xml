@@ -22,6 +22,11 @@
 			<result name="addjsp">/jsp/customer/add.jsp</result>
 			<result name="listjsp">/jsp/customer/list.jsp</result>
 			<result name="listAction" type="redirectAction">customer_listPage</result>
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedExtensions">.jpg,.jpeg,.doc,.docx,.itheima,.avi</param>
+				<!-- 文件大小 -->
+				<param name="fileUpload.maximumSize">1024*1024*10</param>
+			</interceptor-ref>
 		</action>
 		<!-- BseDict -->
 		<action name="baseDict_*" class="baseDictAction" method="{1}">

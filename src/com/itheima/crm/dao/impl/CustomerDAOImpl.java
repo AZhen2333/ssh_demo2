@@ -28,4 +28,15 @@ public class CustomerDAOImpl extends HibernateDaoSupport implements CustomerDAO 
 		return (List<Customer>) getHibernateTemplate().findByCriteria(criteria, firstResult, maxResults);
 	}
 
+	@Override
+	public Customer findCustomer(Long cust_id) {
+		return getHibernateTemplate().get(Customer.class, cust_id);
+	}
+
+	@Override
+	public void delete(Customer customerQuery) {
+		getHibernateTemplate().delete(customerQuery);
+		
+	}
+
 }

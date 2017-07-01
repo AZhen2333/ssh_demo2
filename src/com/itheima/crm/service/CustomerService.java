@@ -10,4 +10,10 @@ public interface CustomerService {
 
 	public void findAllByPage(Pagination<Customer> pagination);
 
+
+	public Customer findCustomerByID(Long cust_id);
+
+
+	public void deleteCustomer(Customer customerQuery);
+
 }
