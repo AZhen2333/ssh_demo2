@@ -28,14 +28,14 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
 	}
 	
 	//回显addjsp
-	public String showAdd(){
+	public String addShow(){
 		return "addjsp";
 	}
 
 	//添加客户信息
 	public String saveCustomer(){
 		customerService.saveCustomer(customer);
-		return "listjsp";
+		return "listAction";
 	}
 	
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %> 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD id=Head1>
@@ -130,8 +131,11 @@ A.active {
 											cellPadding=2 width=155 align=center border=0>
 											<TBODY>
 												<TR>
-													<TD class=menuSmall><A class=style2 href="${PageContext.request.contextPath}/customer_showAdd.action" 
-														target=main>－ 新增客户</A></TD>
+													<TD class=menuSmall>
+														<s:a action="customer_addShow" namespace="/" cssClass="style2" target="main">
+														－ 新增客户
+														</s:a>
+													</TD>
 												</TR>
 												<TR> 
 													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath }/customer_listPage.action"

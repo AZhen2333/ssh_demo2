@@ -21,6 +21,7 @@
 		<action name="customer_*" class="customerAction" method="{1}">
 			<result name="addjsp">/jsp/customer/add.jsp</result>
 			<result name="listjsp">/jsp/customer/list.jsp</result>
+			<result name="listAction" type="redirectAction">customer_listPage</result>
 		</action>
 		<!-- BseDict -->
 		<action name="baseDict_*" class="baseDictAction" method="{1}">
