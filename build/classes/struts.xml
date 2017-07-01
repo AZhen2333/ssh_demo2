@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 开发者模式 副作用：打开后，无法处理ajax请求的异常 -->
+	<!-- <constant name="struts.devMode" value="true" /> -->
+	<!-- 开启自动加载核心配置文件功能 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 简单样式 -->
+	<constant name="struts.ui.theme" value="simple" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- User -->
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="login">/login.jsp</result>
+			<result name="success">/index.jsp</result>
+		</action>
+		<!-- Customer -->
+		<action name="customer_*" class="customerAction" method="{1}">
+			<result name="addjsp">/jsp/customer/add.jsp</result>
+			<result name="listjsp">/jsp/customer/list.jsp</result>
+		</action>
+		<!-- BseDict -->
+		<action name="baseDict_*" class="baseDictAction" method="{1}">
+			<result></result>
+		</action>
+	</package>
+
+</struts>
