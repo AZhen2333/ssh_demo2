@@ -8,10 +8,28 @@ public class Customer {
 //	private String cust_level;//客户级别
 	private String cust_phone;
 	private String cust_mobile;
+	//文件
+	private String cust_path;//文件相对路径
+	private String cust_fileName;//文件名
 	
 	private BaseDict baseDictSource;
 	private BaseDict baseDictIndustry;
 	private BaseDict baseDictLevel;
+	
+	
+	
+	public String getCust_path() {
+		return cust_path;
+	}
+	public void setCust_path(String cust_path) {
+		this.cust_path = cust_path;
+	}
+	public String getCust_fileName() {
+		return cust_fileName;
+	}
+	public void setCust_fileName(String cust_fileName) {
+		this.cust_fileName = cust_fileName;
+	}
 	public Long getCust_id() {
 		return cust_id;
 	}

@@ -24,6 +24,8 @@
 		<property name="cust_name"></property>
 		<property name="cust_phone"></property>
 		<property name="cust_mobile"></property>
+		<property name="cust_path"></property>
+		<property name="cust_fileName"></property>
 		<!-- 多对一 -->
 		<many-to-one name="baseDictSource" class="com.itheima.crm.domain.BaseDict" column="cust_source"></many-to-one>
 		<many-to-one name="baseDictIndustry" class="com.itheima.crm.domain.BaseDict" column="cust_industry"></many-to-one>
